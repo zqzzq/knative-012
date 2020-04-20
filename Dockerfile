@@ -1,2 +1,2 @@
-FROM gcr.io/knative-releases/github.com/knative/eventing-contrib/cmd/event_display
+FROM gcr.io/knative-releases/knative.dev/eventing-contrib/cmd/appender
 MAINTAINER zqzzq
