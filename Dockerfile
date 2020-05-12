@@ -1,2 +1,2 @@
-FROM gcr.io/knative-releases/knative.dev/eventing/cmd/ping/jobrunner@sha256:d0add2dde81ddb0c9e436a19f224daf876915f6fc73ac5deebbe221c15de392a
+FROM gcr.io/knative-releases/knative.dev/eventing-contrib/kafka/source/cmd/controller@sha256:5deaf9b0c408607d22ff1dc6d43d3c6c1a34dbe5465e6cd5ffdf4e9abf7250a7
 MAINTAINER zqzzq
