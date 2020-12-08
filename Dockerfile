@@ -1,3 +1,4 @@
-FROM ghcr.io/querycap/istio/istio-envoy-build-env:0.2.0-arm64
+FROM ubuntu
+RUN wget https://github.com/bazelbuild/bazel/releases/download/3.7.1/bazel-3.7.1-dist.zip
 
 MAINTAINER zqzzq
