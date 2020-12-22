@@ -1,5 +1,5 @@
-FROM busybox
+FROM gcr.io/google_containers/busybox
 RUN cd /
-RUN wget https://github.com/bazelbuild/bazel/releases/download/0.28.0/bazel-0.28.0-dist.zip
+RUN wget http://releases.llvm.org/9.0.0/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
 
 MAINTAINER zqzzq
