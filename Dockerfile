@@ -1,7 +1,7 @@
 FROM ubuntu:focal
 MAINTAINER zqzzq
 ARG LLVM_VERSION
-ENV LLVM_VERSION=$LLVM_VERSION
+ENV LLVM_VERSION=12
 
 RUN apt-get update && apt-get install -y curl gnupg &&\
     llvmRepository="\n\
