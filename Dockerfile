@@ -1,52 +1,5 @@
-FROM ubuntu:focal
+FROM quay.io/solo-io/wasme:0.0.33
+RUN cd /
+# RUN wget http://releases.llvm.org/9.0.0/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
+
 MAINTAINER zqzzq
-ARG LLVM_VERSION
-ENV LLVM_VERSION=12
-
-RUN apt-get update && apt-get install -y curl gnupg &&\
-    llvmRepository="\n\
-deb http://apt.llvm.org/focal/ llvm-toolchain-focal main\n\
-deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal main\n\
-deb http://apt.llvm.org/focal/ llvm-toolchain-focal-${LLVM_VERSION} main\n\
-deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-${LLVM_VERSION} main\n" &&\
-    echo $llvmRepository >> /etc/apt/sources.list && \
-    curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add - && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4052245BD4284CDD
-
-RUN curl -L --output /tmp/cmake.tar.gz \
-  https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0-linux-x86_64.tar.gz \
-  && tar -xf /tmp/cmake.tar.gz -C /usr/local/ --strip-components=1
-
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y \
-      make \
-      pkg-config \
-      asciidoctor \
-      bison \
-      binutils-dev \
-      flex \
-      g++ \
-      git \
-      libelf-dev \
-      zlib1g-dev \
-      libbpfcc-dev \
-      libcereal-dev \
-      libdw-dev \
-      clang-${LLVM_VERSION} \
-      libclang-${LLVM_VERSION}-dev \
-      libclang-common-${LLVM_VERSION}-dev \
-      libclang1-${LLVM_VERSION} \
-      llvm-${LLVM_VERSION} \
-      llvm-${LLVM_VERSION}-dev \
-      llvm-${LLVM_VERSION}-runtime \
-      libllvm${LLVM_VERSION} \
-      systemtap-sdt-dev \
-      python3 \
-      xxd
-
-RUN ln -s /usr/bin/python3 /usr/bin/python
-COPY build.sh /build.sh
-RUN chmod 755 /build.sh
-ENTRYPOINT ["bash", "/build.sh"]
-
-
