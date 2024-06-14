@@ -1,1 +1,1 @@
-FROM bitnami/tensorflow-serving@sha256:2bb09f1500bacbe9fd48f34838dd68b6597bb6f915751b0160f3e3ba62215220
+FROM kong/httpbin@sha256:c546c8b06c542b615f053b577707cb72ddc875a0731d56d0ffaf840f767322ad
