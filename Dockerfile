@@ -1,1 +1,1 @@
-FROM kong/httpbin@sha256:c546c8b06c542b615f053b577707cb72ddc875a0731d56d0ffaf840f767322ad
+FROM ubuntu:20.04
