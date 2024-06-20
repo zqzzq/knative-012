@@ -1,1 +1,1 @@
-FROM ubuntu:20.04
+FROM kserve/kserve-controller:v0.13.0
