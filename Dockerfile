@@ -1,4 +1,4 @@
-#FROM registry.cn-shanghai.aliyuncs.com/zqzzq2/huggingfaceserver:v0.13.0
+#FROM1 registry.cn-shanghai.aliyuncs.com/zqzzq2/huggingfaceserver:v0.13.0
 FROM kserve/huggingfaceserver:v0.13.0
 USER root
 ADD aa.py /root/aa.py
