@@ -1,4 +1,5 @@
-FROM registry.cn-shanghai.aliyuncs.com/zqzzq2/huggingfaceserver:v0.13.0
+#FROM registry.cn-shanghai.aliyuncs.com/zqzzq2/huggingfaceserver:v0.13.0
+FROM kserve/huggingfaceserver:v0.13.0
 USER root
 ADD aa.py /root/aa.py
 RUN pip install huggingface_hub && huggingface-cli login --token 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 
