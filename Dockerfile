@@ -1,4 +1,5 @@
-FROM registry.cn-shanghai.aliyuncs.com/zqzzq2/huggingfaceserver:v0.13.0
+#FROM registry.cn-shanghai.aliyuncs.com/zqzzq2/huggingfaceserver:v0.13.0
+FROM kserve/huggingfaceserver:v0.13.0
 #FROM python:3.10.14-alpine3.20
 #FROM pytorch/pytorch:2.3.1-cuda11.8-cudnn8-runtime
 USER root
