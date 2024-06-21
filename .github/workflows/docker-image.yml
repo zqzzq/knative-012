@@ -15,4 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: |
+        docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
+        docker build . --file Dockerfile --tag registry.cn-hangzhou.aliyuncs.com/zqzzq2/k12:$(date +%s)
+        docker push registry.cn-hangzhou.aliyuncs.com/zqzzq2/k12:$(date +%s)
